@@ -100,6 +100,7 @@ createNATOaerop = compile preProcessFileLineNumbers "CREATE\createNATOaerop.sqf"
 reinfPlayer = compile preProcessFileLineNumbers "REINF\reinfplayer.sqf";
 addFIAsquadHC = compile preProcessFileLineNumbers "REINF\addFIAsquadHC.sqf";
 addFIAveh = compile preProcessFileLineNumbers "REINF\addFIAveh.sqf";
+addFIAvehNEW = compile preProcessFileLineNumbers "REINF\addFIAvehNEW.sqf";
 FIAskillAdd = compile preProcessFileLineNumbers "REINF\FIAskillAdd.sqf";
 CSATinit = compile preProcessFileLineNumbers "CREATE\CSATinit.sqf";
 CSATtimetoreveal = compile preProcessFileLineNumbers "CREATE\CSATtimetoreveal.sqf";

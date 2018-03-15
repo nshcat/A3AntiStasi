@@ -136,6 +136,54 @@ if (worldname == "Tanoa") then {
 		"rhs_gaz66_r142_vdv",
 		"RHS_MELB_AH6M"
 	];
+	
+	// === NEW VEHICLE SYSTEM	
+	
+	vehMaxLevel = 8;
+	
+	vehClasses = [
+		"Truck",			//< Trucks that can transport crates
+		"Transport",		//< Unit transporters, like cars and MRAPs
+		"Fuel",
+		"Ammo",
+		"APC",
+		"Artillery",
+		"Tank",
+		"AA",
+		"Scout Heli",
+		"Gunship"
+	];
+	
+	vehIDs = [
+		[ "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv" ],	//< Truck
+		[ "rhssaf_m1025_olive", "rhssaf_m1025_olive_m2", "rhssaf_m1025_olive_m2", "rhs_tigr_sts_msv", "rhs_tigr_sts_msv", "rhs_tigr_sts_msv", "rhsusf_M1237_MK19_usarmy_wd", "rhsusf_M1237_MK19_usarmy_wd", "rhsusf_M1237_MK19_usarmy_wd" ],	//< Transport
+		[ "C_Van_01_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_F", "RHS_Ural_Fuel_VMF_01", "RHS_Ural_Fuel_VMF_01", "rhsusf_M978A4_usarmy_wd", "rhsusf_M978A4_usarmy_wd" ],	//< Fuel
+		[ "", "", "", "", "", "", "rhs_gaz66_ammo_vdv", "rhsusf_M977A4_AMMO_usarmy_wd", "rhsusf_M977A4_AMMO_usarmy_wd" ],	//< Ammo
+		[ "rhs_bmp1_msv", "rhs_bmp1_msv", "rhs_bmp2_msv", "rhs_bmp2_msv", "rhs_bmp3_late_msv", "rhs_bmp3_late_msv", "rhs_bmp3_late_msv", "rhs_bmp3_late_msv", "rhs_bmp3_late_msv" ],	//< APC
+		[ "rhs_2b14_82mm_msv", "rhs_2b14_82mm_msv", "rhs_2b14_82mm_msv", "RHS_M119_D", "RHS_M119_D", "RHS_M119_D", "rhsusf_m109_usarmy", "rhsusf_m109_usarmy", "rhsusf_m109_usarmy" ],	//< Artillery
+		[ "", "", "", "", "", "rhs_t72bd_tv", "rhsusf_m1a2sep1tuskiiwd_usarmy", "rhsusf_m1a2sep1tuskiiwd_usarmy", "rhsusf_m1a2sep1tuskiiwd_usarmy" ],	//< Tank
+		[ "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "RHS_M6_wd", "RHS_M6_wd", "RHS_M6_wd" ],	//< AA
+		[ "", "", "", "", "", "RHS_MELB_AH6M", "RHS_MELB_AH6M", "B_Heli_Light_01_dynamicLoadout_F", "B_Heli_Light_01_dynamicLoadout_F" ],	//< Scout Heli
+		[ "", "", "", "", "", "", "RHS_AH64D", "RHS_AH1Z", "RHS_AH1Z" ]		//< Gunship
+	];
+	
+	vehPrices = [
+		[ 600, 500, 500, 500, 500, 500, 400, 400, 350  ],			//< Truck
+		[ 500, 650, 650, 850, 850, 850, 2500, 2000, 2000 ],			//< Transport
+		[ 1000, 750, 750, 650, 500, 1000, 1000, 1300, 1300 ],		//< Fuel
+		[ 0, 0, 0, 0, 0, 0, 6000, 6000, 5500 ],						//< Ammo
+		[ 5000, 4500, 4500, 4000, 5500, 5500, 5500, 4500, 4000 ],	//< APC
+		[ 400, 400, 400, 1200, 1200, 1200, 16000, 16000, 16000 ],	//< Artillery
+		[ 0, 0, 0, 0, 0, 16000, 12000, 10000, 10000 ],				//< Tank
+		[ 750, 700, 650, 650, 650, 650, 5500, 5000, 4500 ],			//< AA
+		[ 0, 0, 0, 0, 0, 10000, 9000, 12000, 11000 ],				//< Scout
+		[ 0, 0, 0, 0, 0, 0, 18000, 22000, 21000 ]					//< Gunship
+	];
+	
+	
+	// ======
+	
+	
 
 	guer_gear_vestAdv = "rhs_6b23_6sh116_flora";
 	guer_gear_vestMedic = "rhs_6b23_digi_medic";

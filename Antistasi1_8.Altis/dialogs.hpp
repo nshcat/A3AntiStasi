@@ -84,24 +84,23 @@ class buy_vehicle
 
 	class controls
 	{
-
 	AS_BOX_D(BOX_H_10);
 	AS_FRAME_D(FRAME_H_10, $STR_D_PUR_MIV);
 	BTN_BACK("closeDialog 0; createDialog ""vehicle_option"";");
 
-	BTN_L1(104, $STR_D_BUY_QUA, "", "closedialog 0; [vfs select 3] call addFIAveh");
-	BTN_L2(105, $STR_D_BUY_MRAP, "", "closedialog 0; [vfs select 4] call addFIAveh");
-	BTN_L3(106, $STR_D_BUY_TRU, "", "closedialog 0; [vfs select 5] call addFIAveh");
-	BTN_L4(110, $STR_D_BUY_FUEL_TRUCK, "", "closedialog 0; [vfs select 9] call addFIAveh");
-
-	BTN_R1(107, $STR_D_BUY_ARTILLERY, "", "closedialog 0; [vfs select 6] call addFIAveh");
+	BTN_L1(104, "Buy Truck", "", 			"closedialog 0; 0 call addFIAvehNEW");
+	BTN_L2(105, "Buy MRAP", "", 			"closedialog 0; 1 call addFIAvehNEW");
+	BTN_L3(106, "Buy Fueltruck", "", 		"closedialog 0; 2 call addFIAvehNEW");
 	
-	BTN_R2(109, $STR_D_BUY_AMMO_TRUCK, "", "closedialog 0; [vfs select 8] call addFIAveh");
-	BTN_R3(108, $STR_D_BUY_AA_IFV, "", "closedialog 0; [vfs select 7] call addFIAveh");
-	BTN_R4(111, $STR_D_BUY_TANK, "", "closedialog 0; [vfs select 10] call addFIAveh");
+	BTN_L4(110, "Buy Ammotruck", "", 		"closedialog 0; 3 call addFIAvehNEW");
+	BTN_R1(107, "Buy APC", "", 				"closedialog 0; 4 call addFIAvehNEW");
+	BTN_R2(109, "Buy Artillery", "", 		"closedialog 0; 5 call addFIAvehNEW");
+	
+	BTN_R3(108, "Buy Tank", "", 			"closedialog 0; 6 call addFIAvehNEW");
+	BTN_R4(111, "Buy AA", "", 				"closedialog 0; 7 call addFIAvehNEW");
 
-	BTN_L5(112, $STR_D_BUY_APC, "", "if (activeAFRF) then {if (player == Slowhand) then {closeDialog 0; [vfs select 11] call addFIAveh;} else {hint localize ""STR_DH_OPCHATTF""};}else {hint localize ""STR_DH_RHSEFN""};");
-	BTN_R5(113, $STR_D_BUY_GUNSHIP, "", "closedialog 0; [vfs select 13] call addFIAveh");
+	BTN_L5(112, "Buy Scout Heli", "", 		"closedialog 0; 8 call addFIAvehNEW");
+	BTN_R5(113, "Buy Gunship", "", 			"closedialog 0; 9 call addFIAvehNEW");
 	};
 };
 
