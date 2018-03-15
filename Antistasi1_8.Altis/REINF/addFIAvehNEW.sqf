@@ -9,31 +9,29 @@ _chequeo = false;
 
 if (_chequeo) exitWith {Hint "You cannot buy vehicles with enemies nearby"};
 
-private ["_tipoVeh","_coste","_resourcesFIA","_classIndex", "_xplevel", "_typeList", "_costList", "_marcador","_pos","_veh"];
+private ["_tipoVeh","_coste","_resourcesFIA","_classIndex","_xplevel","_typeList","_costList","_marcador","_pos","_veh"];
 
-_classIndex = _this select 0;
+// Its not passed as an array
+_classIndex = _this;
 
 // Load current army xp TODO is this the correct variable?
-_xplevel = server getVariable "skillFIA"
+_xplevel = server getVariable "skillFIA";
 
-if(_xplevel > vehMaxLevel)
-{
+if(_xplevel > vehMaxLevel) then {
 	_xplevel = vehMaxLevel;
 };
 
 // Obtain cost
-_costList = [vehPrices select _classIndex];
-_coste = [_costList select _xplevel];
+_costList = vehPrices select _classIndex;
+_coste = _costList select _xplevel;
 
 // Check if vehicle class in unavailable
-if(_coste <= 0)
-{
-	exitWith {hint "This class of vehicle is not yet unlocked. Inrease your army level to gain acces to it."};
-};
+if(_coste <= 0) exitWith {hint "This class of vehicle is not yet unlocked. Inrease your army level to gain acces to it."};
+
 
 // Obtain vehicle type
-_typeList = [vehIDs select _classIndex];
-_tipoVeh = [_typeList select _xplevel];
+_typeList = vehIDs select _classIndex;
+_tipoVeh = _typeList select _xplevel;
 
 
 if (!isMultiPlayer) then {_resourcesFIA = server getVariable "resourcesFIA"}

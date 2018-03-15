@@ -157,7 +157,7 @@ if (worldname == "Tanoa") then {
 	vehIDs = [
 		[ "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv", "rhs_kamaz5350_open_vdv" ],	//< Truck
 		[ "rhssaf_m1025_olive", "rhssaf_m1025_olive_m2", "rhssaf_m1025_olive_m2", "rhs_tigr_sts_msv", "rhs_tigr_sts_msv", "rhs_tigr_sts_msv", "rhsusf_M1237_MK19_usarmy_wd", "rhsusf_M1237_MK19_usarmy_wd", "rhsusf_M1237_MK19_usarmy_wd" ],	//< Transport
-		[ "C_Van_01_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_F", "RHS_Ural_Fuel_MSV_01", "RHS_Ural_Fuel_MSV_01", "rhsusf_M978A4_usarmy_wd", "rhsusf_M978A4_usarmy_wd" ],	//< Fuel
+		[ "C_Van_01_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_F", "RHS_Ural_Fuel_VMF_01", "RHS_Ural_Fuel_VMF_01", "rhsusf_M978A4_usarmy_wd", "rhsusf_M978A4_usarmy_wd" ],	//< Fuel
 		[ "", "", "", "", "", "", "rhs_gaz66_ammo_vdv", "rhsusf_M977A4_AMMO_usarmy_wd", "rhsusf_M977A4_AMMO_usarmy_wd" ],	//< Ammo
 		[ "rhs_bmp1_msv", "rhs_bmp1_msv", "rhs_bmp2_msv", "rhs_bmp2_msv", "rhs_bmp3_late_msv", "rhs_bmp3_late_msv", "rhs_bmp3_late_msv", "rhs_bmp3_late_msv", "rhs_bmp3_late_msv" ],	//< APC
 		[ "rhs_2b14_82mm_msv", "rhs_2b14_82mm_msv", "rhs_2b14_82mm_msv", "RHS_M119_D", "RHS_M119_D", "RHS_M119_D", "rhsusf_m109_usarmy", "rhsusf_m109_usarmy", "rhsusf_m109_usarmy" ],	//< Artillery
