@@ -1,4 +1,4 @@
-private ["_display","_childControl", "_xplevel", "_costList", "_typeList" ];
+private ["_display","_childControl", "_xplevel", "_costList", "_typeList", "_tooltip" ];
 createDialog "buy_vehicle";
 
 sleep 1;
@@ -8,80 +8,71 @@ _display = findDisplay 100;
 
 if (str (_display) != "no display") then
 {
-	// Load current army xp TODO is this the correct variable?
-	_xplevel = server getVariable "skillFIA";
+	_tooltip = {
+		_dis = _this select 0;
+		_classId = _this select	1;
+		_bttId = _this select 2;
+		
+		
+		// Retrieve control id
+		_ChildControl = _dis displayCtrl _bttId;
+		
+		
+		// Retrieve XP level
+		_xplevel = server getVariable "skillFIA";
 
-	if(_xplevel > vehMaxLevel) then
-	{
-		_xplevel = vehMaxLevel;
+		if(_xplevel > vehMaxLevel) then
+		{
+			_xplevel = vehMaxLevel;
+		};
+		
+		
+		// Retrieve vehicle data
+		_costList = vehPrices select _classId;
+		_cost = _costList select _xplevel;
+		_typeList = vehIDs select _classId;
+		_type = _typeList select _xplevel;
+		
+		
+		// If the price is 0, the class does not offer a vehicle type
+		// at the current army XP level.
+		if(_cost <= 0) then 
+		{
+			_childControl ctrlSetTooltip "Not available";
+		}
+		else
+		{
+			_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _type, _cost];
+		};
 	};
-
-	// Truck
-	_costList = vehPrices select 0;
-	_typeList = vehIDs select 0;
-	_ChildControl = _display displayCtrl 104;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select 0, _costList select 0];
 	
+	// Truck
+	[_display, 0, 104] call _tooltip;
 	
 	// Transport
-	_costList = vehPrices select 1;
-	_typeList = vehIDs select 1;
-	_ChildControl = _display displayCtrl 105;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select _xplevel, _costList select _xplevel];
-	
+	[_display, 1, 105] call _tooltip;
 	
 	// Fueltruck
-	_costList = vehPrices select 2;
-	_typeList = vehIDs select 2;	
-	_ChildControl = _display displayCtrl 106;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select _xplevel, _costList select _xplevel];
-	
+	[_display, 2, 106] call _tooltip;
 	
 	// Ammotruck
-	_costList = vehPrices select 3;
-	_typeList = vehIDs select 3;	
-	_ChildControl = _display displayCtrl 110;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select _xplevel, _costList select _xplevel];
-	
+	[_display, 3, 110] call _tooltip;
 	
 	// APC
-	_costList = vehPrices select 4;
-	_typeList = vehIDs select 4;	
-	_ChildControl = _display displayCtrl 107;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select _xplevel, _costList select _xplevel];
-	
+	[_display, 4, 107] call _tooltip;
 	
 	// Artillery
-	_costList = vehPrices select 5;
-	_typeList = vehIDs select 5;	
-	_ChildControl = _display displayCtrl 109;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select _xplevel, _costList select _xplevel];
-	
+	[_display, 5, 109] call _tooltip;
 	
 	// Tank
-	_costList = vehPrices select 6;
-	_typeList = vehIDs select 6;	
-	_ChildControl = _display displayCtrl 108;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select _xplevel, _costList select _xplevel];
-	
+	[_display, 6, 108] call _tooltip;
 	
 	// AA
-	_costList = vehPrices select 7;
-	_typeList = vehIDs select 7;	
-	_ChildControl = _display displayCtrl 111;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select _xplevel, _costList select _xplevel];
-	
+	[_display, 7, 111] call _tooltip;
 	
 	// Scout
-	_costList = vehPrices select 8;
-	_typeList = vehIDs select 8;	
-	_ChildControl = _display displayCtrl 112;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select _xplevel, _costList select _xplevel];
-	
+	[_display, 8, 112] call _tooltip;
 	
 	// Gunship
-	_costList = vehPrices select 9;
-	_typeList = vehIDs select 9;	
-	_ChildControl = _display displayCtrl 113;
-	_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _typeList select _xplevel, _costList select _xplevel];
+	[_display, 9, 113] call _tooltip;
 };
