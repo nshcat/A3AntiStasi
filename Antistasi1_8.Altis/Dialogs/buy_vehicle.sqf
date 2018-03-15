@@ -42,7 +42,10 @@ if (str (_display) != "no display") then
 		}
 		else
 		{
-			_ChildControl ctrlSetTooltip format ["Type: %1, Cost: %2 €", _type, _cost];
+			// Fetch pretty name
+			_displayName = getText(configFile >> "CfgVehicles" >> _type >> "displayName");
+		
+			_ChildControl ctrlSetTooltip format ["%1 (%2 €)", _displayName, _cost];
 		};
 	};
 	
