@@ -72,6 +72,7 @@ Slowhand hcSetGroup [_grupo];
 _grupo setVariable ["isHCgroup", true, true];
 
 _crate = "Box_FIA_Support_F" createVehicle _pos;
+
 _crate attachTo [_camion,[0.0,-1.2,0.5]];
 
 waitUntil {sleep 1; ({alive _x} count units _grupo == 0) or ({(alive _x) and (_x distance _posicionTel < 10)} count units _grupo > 0) or (dateToNumber date > _fechalimnum)};

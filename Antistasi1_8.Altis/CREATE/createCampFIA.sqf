@@ -15,7 +15,82 @@ sleep 2;
 
 {
 	call {
-		if (typeof _x == campCrate) exitWith {[_x] call cajaAAF; [_x,"heal_camp"] remoteExec ["AS_fnc_addActionMP"]};
+		if (typeof _x == campCrate) exitWith
+		{
+			[_x] call cajaAAF;
+			[_x,"heal_camp"] remoteExec ["AS_fnc_addActionMP"];
+			
+			_x addAction [localize "str_act_healRepair", "healandrepair.sqf",nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+			_x addAction [localize "str_act_buyVehicle",
+				{
+					nul = createDialog "vehicle_option"
+				},
+				nil,
+				0,
+				false,
+				true,
+				"",
+				"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
+			];
+			_x addaction [
+				localize"STR_ACT_GARAGE",
+				{
+					//["jn_fnc_garage"] call bis_fnc_startloadingscreen;
+					UINamespace setVariable ["jn_type","garage"];
+					[clientOwner] remoteExecCall ["jn_fnc_garage_requestOpen",2];
+				},
+				[],
+				6,
+				true,
+				false,
+				"",
+				"alive _target && {_target distance _this < 5}"
+			];
+			_x addaction [
+				localize"STR_ACT_ARSENAL",
+				{
+					["jn_fnc_arsenal"] call bis_fnc_startloadingscreen;
+					//save proper ammo because BIS arsenal rearms it, and I will over write it back again
+					missionNamespace setVariable ["jna_magazines_init",  [
+						magazinesAmmoCargo (uniformContainer player),
+						magazinesAmmoCargo (vestContainer player),
+						magazinesAmmoCargo (backpackContainer player)
+					]];
+
+					//Save attachments in containers, because BIS arsenal removes them
+					_attachmentsContainers = [[],[],[]];
+					{
+						_container = _x;
+						_weaponAtt = weaponsItemsCargo _x;
+						_attachments = [];
+
+						if!(isNil "_weaponAtt")then{
+
+							{
+								_atts = [_x select 1,_x select 2,_x select 3,_x select 5];
+								_atts = _atts - [""];
+								_attachments = _attachments + _atts;
+							} forEach _weaponAtt;
+							_attachmentsContainers set [_foreachindex,_attachments];
+						}
+					} forEach [uniformContainer player,vestContainer player,backpackContainer player];
+					missionNamespace setVariable ["jna_containerCargo_init", _attachmentsContainers];
+
+					//set type
+					UINamespace setVariable ["jn_type","arsenal"];
+
+					//request server to open arsenal
+					[clientOwner] remoteExecCall ["jn_fnc_arsenal_requestOpen",2];
+				},
+				[],
+				6,
+				true,
+				false,
+				"",
+				"alive _target && {_target distance _this < 5}"
+			];
+		};
+		
 		if (typeof _x == "Land_MetalBarrel_F") exitWith {[_x,"refuel"] remoteExec ["AS_fnc_addActionMP"]};
 		if (typeof _x == "Land_Campfire_F") exitWith {_fire = _x;};
 	};
