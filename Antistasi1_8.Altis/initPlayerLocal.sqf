@@ -8,6 +8,8 @@ private ["_colorWest", "_colorEast","_introShot","_title","_nearestMarker"];
 waitUntil {!isNull player};
 call AS_fnc_initWorker;
 
+_add = _this spawn GOM_fnc_addAircraftLoadout;
+
 [] execVM "briefing.sqf";
 if (isMultiplayer) then {
 	if (!isServer) then {
