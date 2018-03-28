@@ -8,22 +8,22 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=959;
+		nextID=972;
 	};
 	class MarkerIDProvider
 	{
-		nextID=172;
+		nextID=173;
 	};
 	class LayerIndexProvider
 	{
-		nextID=468;
+		nextID=476;
 	};
 	class Camera
 	{
-		pos[]={3640.0789,26.048267,10275.929};
-		dir[]={-0.79456323,-0.56699061,-0.21781646};
-		up[]={-0.54687107,0.82365352,-0.14991593};
-		aside[]={-0.2644127,-2.1408778e-006,0.96452212};
+		pos[]={11650.229,52.488789,11844.622};
+		dir[]={0.76758605,-0.5882104,0.25468391};
+		up[]={0.55828696,0.80870461,0.18523782};
+		aside[]={0.31492162,-1.1886004e-007,-0.94913983};
 	};
 };
 binarizationWanted=0;
@@ -223,7 +223,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=346;
+		items=352;
 		class Item0
 		{
 			dataType="Marker";
@@ -10660,16 +10660,301 @@ class Mission
 			id=958;
 			type="Logic";
 		};
+		class Item346
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11705.781,23.715002,11873.634};
+				angles[]={0,5.3350515,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=966;
+			type="RHS_A10";
+			atlOffset=1.9073486e-006;
+		};
+		class Item347
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11686.763,24.994383,11849.975};
+				angles[]={0,5.3258224,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				reportRemoteTargets=1;
+				receiveRemoteTargets=1;
+				reportOwnPosition=1;
+			};
+			id=967;
+			type="rhsusf_f22";
+		};
+		class Item348
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11702.719,23.262535,11856.508};
+				angles[]={0,5.3358665,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=968;
+			type="Land_CampingTable_F";
+		};
+		class Item349
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11702.74,23.823095,11856.512};
+				angles[]={0,2.2029896,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{this call GOM_fnc_addAircraftLoadoutToObject}";
+			};
+			id=969;
+			type="Land_Laptop_unfolded_F";
+			atlOffset=0.00044250488;
+		};
+		class Item350
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={11698.876,22.854221,11859.645};
+			};
+			id=970;
+			type="ModuleRespawnVehicle_F";
+			atlOffset=-1.9073486e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnVehicle_F_ForcedRespawn";
+					expression="_this setVariable ['ForcedRespawn',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnVehicle_F_Init";
+					expression="_this setVariable ['Init',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
+					expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnVehicle_F_DesertedDistance";
+					expression="_this setVariable ['DesertedDistance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnVehicle_F_PositionType";
+					expression="_this setVariable ['PositionType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleRespawnVehicle_F_RespawnCount";
+					expression="_this setVariable ['RespawnCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleRespawnVehicle_F_Position";
+					expression="_this setVariable ['Position',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleRespawnVehicle_F_Wreck";
+					expression="_this setVariable ['Wreck',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleRespawnVehicle_F_Delay";
+					expression="_this setVariable ['Delay',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleRespawnVehicle_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				nAttributes=10;
+			};
+		};
+		class Item351
+		{
+			dataType="Marker";
+			position[]={11680.645,23.322001,11914.578};
+			name="marker_172";
+			text="NATO Airbase";
+			type="b_hq";
+			id=971;
+			atlOffset=-0.00018882751;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=5;
+			nextID=7;
 		};
 		class Links
 		{
-			items=5;
+			items=7;
 			class Item0
 			{
 				linkID=0;
@@ -10715,6 +11000,26 @@ class Mission
 				linkID=4;
 				item0=950;
 				item1=954;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item5
+			{
+				linkID=5;
+				item0=970;
+				item1=966;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item6
+			{
+				linkID=6;
+				item0=970;
+				item1=967;
 				class CustomData
 				{
 					type="Sync";
